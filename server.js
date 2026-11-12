@@ -18,3 +18,7 @@ on('playerConnecting', () => {
 });
 
 
+on('playerDropped', (reason, resourceName, clientDropReason) => {
+    console.log(`Player ${GetPlayerName(global.source)} drop shod, reason: ${reason}, resource: ${resourceName}, clientDropReason: ${clientDropReason}`)
+})
+
