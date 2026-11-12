@@ -8,17 +8,18 @@ on('playerJoining', () => {
     console.log(`[monitoring] ${playerName} ba id ${playerId} be server join dad`);
 });
 
-on('playerConnecting', () => {
+on('playerConnecting', (playerName, setKickReason, defferals) => {
 
     const playerId = global.source;
-
-    const playerName = GetPlayerName(playerId);
 
     console.log(`[monitoring] ${playerName} ba id ${playerId} darhal etesal be server ast`);
 });
 
 
 on('playerDropped', (reason, resourceName, clientDropReason) => {
-    console.log(`Player ${GetPlayerName(global.source)} drop shod, reason: ${reason}, resource: ${resourceName}, clientDropReason: ${clientDropReason}`)
+
+    const playerId = global.source;
+    const playerName = GetPlayerName(playerId)
+    console.log(`[monitoring] ${playerName} drop shod, reason: ${reason}, resource: ${resourceName}, clientDropReason: ${clientDropReason}`)
 })
 
