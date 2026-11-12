@@ -8,7 +8,7 @@ on('playerJoining', () => {
     console.log(`[monitoring] ${playerName} ba id ${playerId} be server join dad`);
 });
 
-on('playerConnecting', (playerName, setKickReason, defferals) => {
+on('playerConnecting', (playerName, setKickReason, deferrals) => {
 
     const playerId = global.source;
 
